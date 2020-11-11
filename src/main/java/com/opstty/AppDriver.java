@@ -2,6 +2,7 @@ package com.opstty;
 
 import com.opstty.job.Districts;
 import com.opstty.job.MaxHeight;
+import com.opstty.job.SortTree;
 import com.opstty.job.Species;
 import com.opstty.job.TreesCount;
 import com.opstty.job.WordCount;
@@ -23,6 +24,8 @@ public class AppDriver {
                     "A map/reduce program that counts the trees by species in the dataset input files.");
             programDriver.addClass("maxheight", MaxHeight.class,
                     "A map/reduce program that get the highest tree by species in the dataset input files.");
+            programDriver.addClass("sorttree", SortTree.class,
+                    "A map/reduce program that sort the trees from smallest to highest in the dataset input files.");
             exitCode = programDriver.run(argv);
         } catch (Throwable throwable) {
             throwable.printStackTrace();
