@@ -42,6 +42,8 @@
     8
     9
 
+<br></br>
+
 ## __1.8.2 - Show all existing species (very easy)__
 
 ### Now we want to write a MapReduce job that displays the list of different species trees in the `trees.csv` dataset.
@@ -65,6 +67,7 @@
     ulmoides
     virginiana
     x acerifolia
+<br></br>
 ## __1.8.3 - Number of trees by species (easy)__
 
 ### In this part we would like to write a new MapReduce job that will calculates the number of trees of each species. 
@@ -86,7 +89,7 @@
     ulmoides        1
     virginiana      2
     x acerifolia    11
-
+<br></br>
 ## __1.8.4 - Maximum height per specie of tree (average)__
 
 ### We want now create a job that will calculates the height of the tallest tree of each kind. 
@@ -110,6 +113,7 @@
     virginiana      14.0
     x acerifolia    45.0
 
+<br></br>
 ## __1.8.5 - Sort the trees height from smallest to largest (average)__
 
 ### For the next job we will write an MapReduce job that sort the trees height from smallest to largest.
@@ -135,7 +139,7 @@
     40.0
     42.0
     45.0
-
+<br></br>
 ## __1.8.6 - District containing the oldest tree (difficult)__
 
 ### We want now to create a MapReduce job that will display the district where the oldest tree is. 
@@ -143,9 +147,10 @@
 ### The reducer should consolidate all this data and __only output the district__ with the oldest tree :
 
 ### __Console output :__
-    yarn jar /home/nsahnou/hadoop-examples-mapreduce-1.0-SNAPSHOT-jar-with-dependencies.jar oldesttree /user/nsahnou/trees.csv /user/nsahnou/lab2/outputoldest4
+    yarn jar /home/nsahnou/hadoop-examples-mapreduce-1.0-SNAPSHOT-jar-with-dependencies.jar oldesttree /user/nsahnou/trees.csv /user/nsahnou/lab2/outputoldest5
     ...
-    hdfs dfs -cat lab2/outputoldest4/part-r-00000
-    5
-
-## __1.8.6 - District containing the oldest tree (difficult)__
+    hdfs dfs -cat lab2/outputoldest5/part-r-00000
+    5;1601
+    
+<br></br>
+## __1.8.7 - District containing the most trees (very difficult)__

@@ -29,7 +29,7 @@ public class OldestTree {
         job.setMapOutputKeyClass(LongWritable.class);
         job.setMapOutputValueClass(MapWritable.class);
         job.setOutputKeyClass(NullWritable.class);
-        job.setOutputValueClass(IntWritable.class);
+        job.setOutputValueClass(MapWritable.class);
 
         for (int i = 0; i < otherArgs.length - 1; ++i) {
             FileInputFormat.addInputPath(job, new Path(otherArgs[i]));

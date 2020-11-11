@@ -8,7 +8,7 @@ import org.apache.hadoop.mapreduce.Reducer;
 import java.io.IOException;
 import com.opstty.MapWritable;
 
-public class OldestTreeReducer extends Reducer<LongWritable, MapWritable, NullWritable, IntWritable> {
+public class OldestTreeReducer extends Reducer<LongWritable, MapWritable, NullWritable, MapWritable> {
 
     public void reduce(LongWritable key, Iterable<MapWritable> values, Context context)
             throws IOException, InterruptedException {
@@ -23,6 +23,6 @@ public class OldestTreeReducer extends Reducer<LongWritable, MapWritable, NullWr
             	MapValue.setVal2(new IntWritable(value.getVal2().get()));               
             }
         }
-        context.write(NullWritable.get(), MapValue.getVal());
+        context.write(NullWritable.get(), MapValue);
      }
 }
