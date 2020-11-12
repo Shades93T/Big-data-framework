@@ -20,7 +20,7 @@ public class TreesCount {
             System.err.println("Usage: treescount <in> [<in>...] <out>");
             System.exit(2);
         }
-        Job job = Job.getInstance(conf, "nbTrees");
+        Job job = Job.getInstance(conf, "treescount");
         job.setJarByClass(TreesCount.class);
         job.setMapperClass(TreesCountMapper.class);
         job.setCombinerClass(TreesCountReducer.class);

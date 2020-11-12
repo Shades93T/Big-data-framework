@@ -20,14 +20,8 @@ public class SortTreeReducer extends Reducer<DoubleWritable, Iterable<DoubleWrit
     	DoubleWritable height = new DoubleWritable();
         for (DoubleWritable val : key) {
             String line[] = val.toString().split(";");
-            try {
-            	height.set(Double.parseDouble(line[0]));
-                trees.add(height);
-
-            } catch (NumberFormatException e) {
-                e.printStackTrace();
-                continue;
-            }
+           	height.set(Double.parseDouble(line[0]));
+            trees.add(height);
         }
 
         Collections.sort(trees);
@@ -35,5 +29,4 @@ public class SortTreeReducer extends Reducer<DoubleWritable, Iterable<DoubleWrit
             context.write(t, NullWritable.get());
         }
     }
-
 }

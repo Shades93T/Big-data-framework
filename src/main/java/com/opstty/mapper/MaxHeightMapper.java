@@ -13,14 +13,9 @@ public class MaxHeightMapper extends Mapper<Object, Text, Text, DoubleWritable> 
         String line[] = value.toString().split(";");
         if (!line[3].equals("ESPECE")) {
             Text species = new Text(line[3]);
-            try {
-                double h = Double.parseDouble(line[6]);
-                DoubleWritable height = new DoubleWritable(h);
-                context.write(species, height);
-            } catch (NumberFormatException e) {
-                e.printStackTrace();
-            }
-
+            double h = Double.parseDouble(line[6]);
+            DoubleWritable height = new DoubleWritable(h);
+            context.write(species, height);
         }
     }
 }

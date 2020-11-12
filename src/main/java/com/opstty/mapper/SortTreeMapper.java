@@ -14,14 +14,9 @@ public class SortTreeMapper extends Mapper<Object, Text, DoubleWritable, NullWri
         String line[] = value.toString().split(";");
         if (!line[6].equals("HAUTEUR")) {
             DoubleWritable height = new DoubleWritable();
-            try {
-                String h = line[6];
-                height.set(Double.parseDouble(h));
-                context.write(height, NullWritable.get());
-            } catch (NumberFormatException e) {
-                e.printStackTrace();
-            }
-
+            String h = line[6];
+            height.set(Double.parseDouble(h));
+            context.write(height, NullWritable.get());
         }
     }
 }
